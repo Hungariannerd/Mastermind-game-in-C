@@ -94,7 +94,7 @@ char control(char *tipp, char *game_nums){
 	}
 
 	if (result) {
-		printf("Gratul\xa0lok, t\x94%bb eszed van egy mar\x82knyi lepk\x82n\x82l! =)\n");
+		printf("Gratula\n");
 	} else {
 		for (i = 0;i < 4; i++) {
 			if (temp[i] != 0) {
@@ -104,17 +104,17 @@ char control(char *tipp, char *game_nums){
 		}
 	}
 
-	return result;//megoldást talált a júzer
+	return result;
 }
 
 void game(char *tipp, char *game_nums){
 	char i;
 
 	if ((m.tipps++) == 10) {
-		printf("\nSzar vagy!\n");
+		printf("\n nem jo\n");
 		v1 = 2;
 	}else{
-		printf("\nTippelj, kedves bar\xa0tom: ");
+		printf("\nTippelj! ");
 		scanf("%s",tipp=m.all[m.tipps-1]);
 
 		if (control(tipp,game_nums))
@@ -122,7 +122,7 @@ void game(char *tipp, char *game_nums){
 
 		printf("\nJelenleg \xa1gy \xa0llsz:\n\n");
 		for (i = 0; i < m.tipps; i++)
-			printf("%d. Tipp: %c%c%c%c - V\xa0lasz: %c%c%c%c\n",i+1,m.all[i][0],m.all[i][1],
+			printf("%d. Tipp: %c%c%c%c - Valasz %c%c%c%c\n",i+1,m.all[i][0],m.all[i][1],
 				m.all[i][2],m.all[i][3],m.v_controll[i][0],m.v_controll[i][1],m.v_controll[i][2],m.v_controll[i][3]);
 
 	}
@@ -146,7 +146,7 @@ int main(void){
 				v1 = 0;
 				break;
 		default:
-			printf("P\x94\cs vagy, v\xa0lassz egy rendes men\x81pontot!\n");
+			printf("\n");
 			;
 		}
 		menu_outl();
